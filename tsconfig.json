@@ -17,6 +17,10 @@
     "esModuleInterop": true,
     "isolatedModules": true,
 
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noEmit": true,

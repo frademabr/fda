@@ -1,120 +1,138 @@
-import type { BoxProps } from '@mui/material/Box';
-import type { IProductItemHeroProps } from 'src/types/product';
+import type { BoxProps } from "@mui/material/Box";
+import type { IProductItemHeroProps } from "src/types/product";
 
-import Fade from 'embla-carousel-fade';
-import Autoplay from 'embla-carousel-autoplay';
-import { varAlpha } from 'minimal-shared/utils';
+import { GlareCard } from "@/components/glare-card/glare-card";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Fade from "embla-carousel-fade";
+import Autoplay from "embla-carousel-autoplay";
+import { varAlpha } from "minimal-shared/utils";
 
-import { paths } from 'src/routes/paths';
-import { RouterLink } from 'src/routes/components';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { CONFIG } from 'src/global-config';
-import { _productsCarousel } from 'src/_mock';
+import { paths } from "src/routes/paths";
+import { RouterLink } from "src/routes/components";
 
-import { Label } from 'src/components/label';
-import { Iconify } from 'src/components/iconify';
+import { CONFIG } from "src/global-config";
+import { _productsCarousel } from "src/_mock";
+
+import { Label } from "src/components/label";
+import { Iconify } from "src/components/iconify";
 import {
   Carousel,
   useCarousel,
   CarouselDotButtons,
   CarouselArrowBasicButtons,
-} from 'src/components/carousel';
+} from "src/components/carousel";
+import { Divider } from "@mui/material";
+import { Image } from "src/components/image";
 
 // ----------------------------------------------------------------------
 
 export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
-  const carousel = useCarousel({ loop: true, duration: 80 }, [Autoplay({ delay: 5000 }), Fade()]);
+  const carousel = useCarousel({ loop: true, duration: 80 }, [
+    Autoplay({ delay: 5000 }),
+    Fade(),
+  ]);
 
   return (
-    <Box
-      component="section"
-      sx={[
-        (theme) => ({
-          ...theme.mixins.bgGradient({
-            images: [
-              `linear-gradient(to bottom, ${varAlpha(theme.vars.palette.common.blackChannel, 0.8)}, ${varAlpha(theme.vars.palette.common.blackChannel, 0.8)})`,
-              `url(${CONFIG.assetsDir}/assets/background/overlay-2.webp)`,
-            ],
-          }),
-          overflow: 'hidden',
-          position: 'relative',
-        }),
-        ...(Array.isArray(sx) ? sx : [sx]),
-      ]}
-      {...other}
-    >
+    <div className="">
       <Box
-        component="img"
-        alt="Texture"
-        src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-        sx={{ top: 0, right: 0, height: 1, width: 'auto', position: 'absolute' }}
-      />
-      <Container sx={{ position: 'relative' }}>
-        <Carousel carousel={carousel}>
-          {_productsCarousel.map((product, index) => (
-            <CarouselItem
-              key={product.id}
-              product={product}
-              selected={carousel.dots.selectedIndex === index}
-            />
-          ))}
-        </Carousel>
-
+        className=""
+        component="section"
+        sx={[
+          (theme) => ({
+            ...theme.mixins.bgGradient({
+              images: [
+                // `radial-gradient(100% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${theme.vars.palette.common.black})`,
+                // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
+              ],
+            }),
+            overflow: "hidden",
+            position: "relative",
+          }),
+          ...(Array.isArray(sx) ? sx : [sx]),
+        ]}
+        {...other}
+      >
+        {/* <Divider component="section" className="h-2 border-r-8 w-120" /> */}
         <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            transform: 'translateY(-64px)',
-          }}
-        >
-          <CarouselDotButtons
-            variant="rounded"
-            scrollSnaps={carousel.dots.scrollSnaps}
-            selectedIndex={carousel.dots.selectedIndex}
-            onClickDot={carousel.dots.onClickDot}
-            sx={{ color: 'primary.main' }}
-          />
+          component="img"
+          alt="Texture"
+          src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
+          sx={{ top: 0, right: 0, height: 4, width: "auto", position: "absolute" }}
+        />
 
-          <CarouselArrowBasicButtons
-            {...carousel.arrows}
-            options={carousel.options}
-            slotProps={{
-              prevBtn: {
-                svgIcon: (
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m15 5l-6 7l6 7"
-                  />
-                ),
-              },
-              nextBtn: {
-                svgIcon: (
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m9 5l6 7l-6 7"
-                  />
-                ),
-              },
+        <Container sx={{ position: "relative", marginTop: "-80px" }}>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              transform: "translateY(-64px)",
             }}
-            sx={{ gap: 1, color: 'primary.main' }}
-          />
-        </Box>
-      </Container>
-    </Box>
+          >
+            {/* <Image src={`...${CONFIG.assetsDir}/assets/images/home/headertop.jpeg`} /> */}
+            <GlareCard className="flex flex-col items-start justify-center pb-6 py-8 px-16 overflow-hidden">
+              {/* <CarouselDotButtons
+                variant="rounded"
+                scrollSnaps={carousel.dots.scrollSnaps}
+                selectedIndex={carousel.dots.selectedIndex}
+                onClickDot={carousel.dots.onClickDot}
+                sx={{ color: 'info.main' }}
+              /> */}
+
+              <Carousel
+                className="h-full w-full absolute inset-0  mb-10"
+                carousel={carousel}
+              >
+                {_productsCarousel.map((product, index) => (
+                  <CarouselItem
+                    key={product.id}
+                    product={product}
+                    selected={carousel.dots.selectedIndex === index}
+                  />
+                ))}
+              </Carousel>
+            </GlareCard>
+            {/*
+        <CarouselArrowBasicButtons
+          {...carousel.arrows}
+          options={carousel.options}
+          slotProps={{
+            prevBtn: {
+              svgIcon: (
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m15 5l-6 7l6 7"
+                />
+              ),
+            },
+            nextBtn: {
+              svgIcon: (
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m9 5l6 7l-6 7"
+                />
+              ),
+            },
+          }}
+          sx={{ gap: 1, color: 'info.main' }}
+        /> */}
+          </Box>
+        </Container>
+      </Box>
+    </div>
   );
 }
 
@@ -134,11 +152,11 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
           py: 15,
           opacity: 0,
           minHeight: 720,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          flexDirection: { xs: 'column', md: 'row' },
-          transition: theme.transitions.create(['opacity'], {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          flexDirection: { xs: "column", md: "row" },
+          transition: theme.transitions.create(["opacity"], {
             easing: theme.transitions.easing.easeIn,
             duration: theme.transitions.duration.complex,
           }),
@@ -149,9 +167,9 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
       <Box
         sx={{
           maxWidth: 440,
-          color: 'common.white',
-          mx: { xs: 'auto', md: 'unset' },
-          textAlign: { xs: 'center', md: 'unset' },
+          color: "common.white",
+          mx: { xs: "auto", md: "unset" },
+          textAlign: { xs: "center", md: "unset" },
         }}
       >
         <Label variant="filled" color="warning" sx={{ mb: 2 }}>
@@ -169,16 +187,16 @@ export function CarouselItem({ product, selected }: CarouselItemProps) {
           {product.caption}
         </Typography>
 
-        <Button
+        {/* <Button
           component={RouterLink}
           href={paths.eCommerce.product}
           size="large"
-          color="primary"
+          color="info"
           variant="contained"
           endIcon={<Iconify width={16} icon="solar:alt-arrow-right-outline" sx={{ ml: -0.5 }} />}
         >
-          Shop now
-        </Button>
+          Saiba mais
+        </Button> */}
       </Box>
 
       <Box

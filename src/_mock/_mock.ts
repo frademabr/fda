@@ -1,6 +1,6 @@
-import { fSub } from 'src/utils/format-time';
+import { fSub } from "src/utils/format-time";
 
-import { CONFIG } from 'src/global-config';
+import { CONFIG } from "src/global-config";
 
 import {
   _id,
@@ -28,7 +28,7 @@ import {
   _descriptions,
   _productNames,
   _companyNames,
-} from './assets';
+} from "./assets";
 
 // ----------------------------------------------------------------------
 
@@ -67,15 +67,20 @@ export const _mock = {
   },
   // Media
   image: {
-    cover: (index: number) => `${CONFIG.assetsDir}/assets/images/cover/cover-${index + 1}.webp`,
-    course: (index: number) => `${CONFIG.assetsDir}/assets/images/course/course-${index + 1}.webp`,
-    avatar: (index: number) => `${CONFIG.assetsDir}/assets/images/avatar/avatar-${index + 1}.webp`,
-    travel: (index: number) => `${CONFIG.assetsDir}/assets/images/travel/travel-${index + 1}.webp`,
-    career: (index: number) => `${CONFIG.assetsDir}/assets/images/career/career-${index + 1}.webp`,
+    cover: (index: number) =>
+      `${CONFIG.assetsDir}/assets/images/cover/cover-${index + 1}.webp`,
+    course: (index: number) =>
+      `${CONFIG.assetsDir}/assets/images/course/course-${index + 1}.webp`,
+    avatar: (index: number) =>
+      `${CONFIG.assetsDir}/assets/images/avatar/avatar-${index + 1}.webp`,
+    travel: (index: number) =>
+      `${CONFIG.assetsDir}/assets/images/travel/travel-${index + 1}.webp`,
+    career: (index: number) =>
+      `${CONFIG.assetsDir}/assets/images/career/career-${index + 1}.webp`,
     company: (index: number) =>
       `${CONFIG.assetsDir}/assets/images/company/company-${index + 1}.webp`,
     product: (index: number) =>
-      `${CONFIG.assetsDir}/assets/images/z-product/product-${index + 1}.webp`,
+      `${CONFIG.assetsDir}/assets/images/z-product/product-${index + 1}.jpg`,
     portrait: (index: number) =>
       `${CONFIG.assetsDir}/assets/images/portrait/portrait-${index + 1}.webp`,
     marketing: (index: number) =>

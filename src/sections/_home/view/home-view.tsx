@@ -28,6 +28,7 @@ import { HomeFeatureHighlights } from "../home-feature-highlights";
 import { HomeFlexibleComponents } from "../home-flexible-components";
 
 import { ElearningOurClients } from "src/sections/_elearning/elearning-our-clients";
+import { EcommerceLandingHero } from "@/sections/_ecommerce/landing/ecommerce-landing-hero";
 
 // ----------------------------------------------------------------------
 
@@ -48,15 +49,15 @@ export function HomeView() {
 
       <HomeHero />
 
-      <HomeNewStart />
-
       <ElearningOurClients brands={_brands} />
+
+      <HomeNewStart />
 
       <HomeFlexibleComponents />
 
       <HomeFeatureHighlights />
 
-      <HomeForDesigner />
+      <EcommerceLandingHero />
 
       <HomePricing plans={_pricingHome} />
 

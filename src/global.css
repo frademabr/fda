@@ -1,29 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /** **************************************
 * Fonts: app
 *************************************** */
-@import '@fontsource-variable/public-sans';
+@import "@fontsource-variable/public-sans";
 
-@import '@fontsource/barlow/400.css';
-@import '@fontsource/barlow/500.css';
-@import '@fontsource/barlow/600.css';
-@import '@fontsource/barlow/700.css';
-@import '@fontsource/barlow/800.css';
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/barlow/800.css";
 
 /** **************************************
 * Fonts: options
 *************************************** */
-@import '@fontsource-variable/dm-sans';
-@import '@fontsource-variable/inter';
-@import '@fontsource-variable/nunito-sans';
+@import "@fontsource-variable/dm-sans";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/nunito-sans";
 
 /** **************************************
 * Plugins
 *************************************** */
 /* scrollbar */
-@import './components/scrollbar/styles.css';
+@import "./components/scrollbar/styles.css";
 
 /* lightbox */
-@import './components/lightbox/styles.css';
+@import "./components/lightbox/styles.css";
 
 /** **************************************
 * Baseline
@@ -49,15 +53,20 @@ ul {
   padding: 0;
   list-style-type: none;
 }
-input[type='number'] {
+input[type="number"] {
   -moz-appearance: textfield;
   appearance: none;
 }
-input[type='number']::-webkit-outer-spin-button {
+input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
   -webkit-appearance: none;
 }
-input[type='number']::-webkit-inner-spin-button {
+input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
   -webkit-appearance: none;
+}
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }
