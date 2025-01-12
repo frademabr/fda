@@ -107,7 +107,7 @@ export const _productsTable = Array.from({ length: 12 }, (_, index) => ({
 export const _productsCarousel = Array.from({ length: 7 }, (_, index) => ({
   id: _mock.id(index),
   name: _mock.productName(index),
-  // caption: _mock.description(index), // description glare card, filiais.
+  caption: _mock.description(index), // description glare card, filiais.
   coverUrl: _mock.image.product(index),
   label: "15 Filiais! 13 no Brasil e 2 Internacionais!",
 }));
