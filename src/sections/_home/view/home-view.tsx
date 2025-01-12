@@ -15,7 +15,6 @@ import {
   useScrollProgress,
 } from "src/components/animate/scroll-progress";
 
-import { HomeHero } from "../home-hero";
 import { HomeFAQs } from "../home-faqs";
 import { HomeNewStart } from "../home-new-start";
 import { HomeAdvertisement } from "../home-advertisement";
@@ -24,6 +23,7 @@ import { HomeFlexibleComponents } from "../home-flexible-components";
 
 import { ElearningOurClients } from "src/sections/_elearning/elearning-our-clients";
 import { EcommerceLandingHero } from "@/sections/_ecommerce/landing/ecommerce-landing-hero";
+import { MarketingServicesHowItWork } from "@/sections/_marketing/services/marketing-services-how-it-work";
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ export function HomeView() {
         sx={{ position: "fixed" }}
       />
 
-      <HomeHero />
+      <MarketingServicesHowItWork />
 
       <ElearningOurClients brands={_brands} />
 
