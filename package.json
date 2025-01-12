@@ -1,12 +1,12 @@
 {
-  "name": "@zone-kit/next-ts",
-  "author": "Minimals",
-  "version": "3.2.0",
-  "description": "Next & TypeScript",
+  "name": "fradema-web",
+  "author": "Arinelli Dev @ Fradema Team",
+  "version": "1.0.0",
+  "description": "Fradema Consultoria Tributária",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 8002",
-    "start": "next start -p 8002",
+    "dev": "next dev -p 7007",
+    "start": "next start -p 7007",
     "build": "next build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
@@ -25,7 +25,7 @@
   "engines": {
     "node": "20.x"
   },
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "pnpm@10.0.0",
   "dependencies": {
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
@@ -75,6 +75,7 @@
     "@types/react-dom": "^18.3.5",
     "@types/stylis": "^4.2.7",
     "@typescript-eslint/parser": "^8.19.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-import-resolver-typescript": "^3.7.0",
     "eslint-plugin-import": "^2.31.0",
@@ -83,7 +84,9 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.14.0",
+    "postcss": "^8.4.49",
     "prettier": "^3.4.2",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2",
     "typescript-eslint": "^8.19.0"
   }

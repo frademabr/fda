@@ -1,40 +1,43 @@
-'use client';
+"use client";
 
-import type { FabProps } from '@mui/material/Fab';
-import type { UseBackToTopReturn } from 'minimal-shared/hooks';
+import type { FabProps } from "@mui/material/Fab";
+import type { UseBackToTopReturn } from "minimal-shared/hooks";
 
-import { useBackToTop } from 'minimal-shared/hooks';
+import { useBackToTop } from "minimal-shared/hooks";
 
-import Fab from '@mui/material/Fab';
-import SvgIcon from '@mui/material/SvgIcon';
+import Fab from "@mui/material/Fab";
+import SvgIcon from "@mui/material/SvgIcon";
 
-import { _pricingHome } from 'src/_mock';
+import { _pricingHome } from "src/_mock";
 
-import { ScrollProgress, useScrollProgress } from 'src/components/animate/scroll-progress';
+import {
+  ScrollProgress,
+  useScrollProgress,
+} from "src/components/animate/scroll-progress";
 
-import { HomeHero } from '../home-hero';
-import { HomeFAQs } from '../home-faqs';
-import { HomePricing } from '../home-pricing';
-import { HomeNewStart } from '../home-new-start';
-import { HomeMinimalUI } from '../home-combination';
-import { HomeForDesigner } from '../home-for-designer';
-import { HomeAdvertisement } from '../home-advertisement';
-import { HomeFeatureHighlights } from '../home-feature-highlights';
-import { HomeFlexibleComponents } from '../home-flexible-components';
+import { HomeHero } from "../home-hero";
+import { HomeFAQs } from "../home-faqs";
+import { HomePricing } from "../home-pricing";
+import { HomeNewStart } from "../home-new-start";
+import { HomeMinimalUI } from "../home-combination";
+import { HomeForDesigner } from "../home-for-designer";
+import { HomeAdvertisement } from "../home-advertisement";
+import { HomeFeatureHighlights } from "../home-feature-highlights";
+import { HomeFlexibleComponents } from "../home-flexible-components";
 
 // ----------------------------------------------------------------------
 
 export function HomeView() {
   const pageProgress = useScrollProgress();
 
-  const { onBackToTop, isVisible } = useBackToTop('90%');
+  const { onBackToTop, isVisible } = useBackToTop("90%");
 
   return (
     <>
       <ScrollProgress
         variant="linear"
         progress={pageProgress.scrollYProgress}
-        sx={{ position: 'fixed' }}
+        sx={{ position: "fixed" }}
       />
 
       <BackToTopButton isVisible={isVisible} onClick={onBackToTop} />
@@ -63,7 +66,7 @@ export function HomeView() {
 // ----------------------------------------------------------------------
 
 type BackToTopProps = FabProps & {
-  isVisible: UseBackToTopReturn['isVisible'];
+  isVisible: UseBackToTopReturn["isVisible"];
 };
 
 function BackToTopButton({ isVisible, sx, ...other }: BackToTopProps) {
@@ -74,13 +77,13 @@ function BackToTopButton({ isVisible, sx, ...other }: BackToTopProps) {
         (theme) => ({
           width: 48,
           height: 48,
-          position: 'fixed',
-          transform: 'scale(0)',
+          position: "fixed",
+          transform: "scale(0)",
           right: { xs: 24, md: 32 },
           bottom: { xs: 24, md: 32 },
           zIndex: theme.zIndex.speedDial,
-          transition: theme.transitions.create(['transform']),
-          ...(isVisible && { transform: 'scale(1)' }),
+          transition: theme.transitions.create(["transform"]),
+          ...(isVisible && { transform: "scale(1)" }),
         }),
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}

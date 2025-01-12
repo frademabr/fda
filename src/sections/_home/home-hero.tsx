@@ -1,24 +1,24 @@
-import type { Variants } from 'framer-motion';
-import type { BoxProps } from '@mui/material/Box';
+import type { Variants } from "framer-motion";
+import type { BoxProps } from "@mui/material/Box";
 
-import { m } from 'framer-motion';
-import { varAlpha } from 'minimal-shared/utils';
+import { m } from "framer-motion";
+import { varAlpha } from "minimal-shared/utils";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 
-import { CONFIG } from 'src/global-config';
+import { CONFIG } from "src/global-config";
 
-import { Iconify } from 'src/components/iconify';
-import { varFade, MotionViewport } from 'src/components/animate';
+import { Iconify } from "src/components/iconify";
+import { varFade, MotionViewport } from "src/components/animate";
 
 // ----------------------------------------------------------------------
 
-const variants: Variants = varFade('inUp', { distance: 24 });
+const variants: Variants = varFade("inUp", { distance: 24 });
 
 export function HomeHero({ sx, ...other }: BoxProps) {
   const renderTexts = () => (
@@ -30,7 +30,7 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             component="span"
             sx={(theme) => ({
               ...theme.mixins.textGradient(
-                `90deg, ${theme.vars.palette.primary.main} 20%, ${theme.vars.palette.secondary.main} 100%`
+                `90deg, ${theme.vars.palette.primary.main} 20%, ${theme.vars.palette.secondary.main} 100%`,
               ),
             })}
           >
@@ -54,25 +54,25 @@ export function HomeHero({ sx, ...other }: BoxProps) {
         component="span"
         sx={{
           gap: 0.75,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: { xs: 'center', md: 'flex-start' },
+          display: "flex",
+          alignItems: "center",
+          justifyContent: { xs: "center", md: "flex-start" },
         }}
       >
-        <Box component="span" sx={{ opacity: 0.48, typography: 'overline' }}>
+        <Box component="span" sx={{ opacity: 0.48, typography: "overline" }}>
           Available for
         </Box>
 
         <Box
           component="span"
           sx={(theme) => ({
-            px: '5px',
-            lineHeight: '18px',
-            borderRadius: '18px',
-            bgcolor: 'background.paper',
-            fontWeight: 'fontWeightSemiBold',
+            px: "5px",
+            lineHeight: "18px",
+            borderRadius: "18px",
+            bgcolor: "background.paper",
+            fontWeight: "fontWeightSemiBold",
             fontSize: theme.typography.pxToRem(11),
-            border: `solid 1px ${varAlpha(theme.vars.palette.grey['500Channel'], 0.24)}`,
+            border: `solid 1px ${varAlpha(theme.vars.palette.grey["500Channel"], 0.24)}`,
           })}
         >
           v{CONFIG.appVersion}
@@ -82,8 +82,8 @@ export function HomeHero({ sx, ...other }: BoxProps) {
   );
 
   const renderPlatformIcons = () => (
-    <Box sx={{ mt: 3, gap: 2.5, display: 'flex' }}>
-      {['js', 'ts', 'nextjs', 'vite', 'figma'].map((platform) => (
+    <Box sx={{ mt: 3, gap: 2.5, display: "flex" }}>
+      {["js", "ts", "nextjs", "vite", "figma"].map((platform) => (
         <m.div key={platform} variants={variants}>
           <Box
             component="img"
@@ -93,8 +93,8 @@ export function HomeHero({ sx, ...other }: BoxProps) {
               (theme) => ({
                 width: 24,
                 height: 24,
-                ...theme.applyStyles('dark', {
-                  ...(platform === 'nextjs' && { filter: 'invert(1)' }),
+                ...theme.applyStyles("dark", {
+                  ...(platform === "nextjs" && { filter: "invert(1)" }),
                 }),
               }),
             ]}
@@ -109,10 +109,10 @@ export function HomeHero({ sx, ...other }: BoxProps) {
       sx={{
         gap: 5,
         maxWidth: 480,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: { xs: 'center', md: 'flex-start' },
-        textAlign: { xs: 'center', md: 'left' },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: { xs: "center", md: "flex-start" },
+        textAlign: { xs: "center", md: "left" },
       }}
     >
       {renderTexts()}
@@ -141,24 +141,28 @@ export function HomeHero({ sx, ...other }: BoxProps) {
   const renderImage = () => (
     <Box
       component={MotionViewport}
-      sx={{ flex: '1 1 auto', position: 'relative', display: { xs: 'none', md: 'block' } }}
+      sx={{
+        flex: "1 1 auto",
+        position: "relative",
+        display: { xs: "none", md: "block" },
+      }}
     >
       {Array.from({ length: 7 }, (_, index) => (
         <Box
           key={index}
           component={m.img}
-          variants={varFade('inDown', { distance: 40 })}
+          variants={varFade("inDown", { distance: 40 })}
           alt="Home hero"
           src={`${CONFIG.assetsDir}/assets/images/home/hero-${index + 1}.webp`}
           sx={{
             top: 0,
             left: 0,
-            m: 'auto',
+            m: "auto",
             bottom: 0,
             width: 800,
-            maxWidth: 'unset',
+            maxWidth: "unset",
             zIndex: 9 - index,
-            position: 'absolute',
+            position: "absolute",
           }}
         />
       ))}
@@ -177,15 +181,15 @@ export function HomeHero({ sx, ...other }: BoxProps) {
             ],
           }),
           py: 10,
-          overflow: 'hidden',
-          position: 'relative',
-          [theme.breakpoints.up('md')]: {
+          overflow: "hidden",
+          position: "relative",
+          [theme.breakpoints.up("md")]: {
             py: 15,
             minHeight: 760,
-            height: '100vh',
+            height: "100vh",
             maxHeight: 1440,
-            display: 'flex',
-            alignItems: 'center',
+            display: "flex",
+            alignItems: "center",
           },
         }),
         ...(Array.isArray(sx) ? sx : [sx]),
@@ -194,12 +198,12 @@ export function HomeHero({ sx, ...other }: BoxProps) {
     >
       <Container
         sx={(theme) => ({
-          display: 'flex',
-          justifyContent: 'center',
-          [theme.breakpoints.up('md')]: {
+          display: "flex",
+          justifyContent: "center",
+          [theme.breakpoints.up("md")]: {
             columnGap: 10,
-            alignItems: 'center',
-            justifyContent: 'unset',
+            alignItems: "center",
+            justifyContent: "unset",
           },
         })}
       >
