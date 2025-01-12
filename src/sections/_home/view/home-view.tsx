@@ -3,8 +3,6 @@
 import type { FabProps } from "@mui/material/Fab";
 import type { UseBackToTopReturn } from "minimal-shared/hooks";
 
-import { useBackToTop } from "minimal-shared/hooks";
-
 import { _brands } from "src/_mock";
 
 import Fab from "@mui/material/Fab";
@@ -22,7 +20,6 @@ import { HomeFAQs } from "../home-faqs";
 import { HomePricing } from "../home-pricing";
 import { HomeNewStart } from "../home-new-start";
 import { HomeMinimalUI } from "../home-combination";
-import { HomeForDesigner } from "../home-for-designer";
 import { HomeAdvertisement } from "../home-advertisement";
 import { HomeFeatureHighlights } from "../home-feature-highlights";
 import { HomeFlexibleComponents } from "../home-flexible-components";
@@ -35,8 +32,6 @@ import { EcommerceLandingHero } from "@/sections/_ecommerce/landing/ecommerce-la
 export function HomeView() {
   const pageProgress = useScrollProgress();
 
-  const { onBackToTop, isVisible } = useBackToTop("90%");
-
   return (
     <>
       <ScrollProgress
@@ -44,8 +39,6 @@ export function HomeView() {
         progress={pageProgress.scrollYProgress}
         sx={{ position: "fixed" }}
       />
-
-      <BackToTopButton isVisible={isVisible} onClick={onBackToTop} />
 
       <HomeHero />
 
