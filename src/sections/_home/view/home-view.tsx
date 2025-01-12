@@ -5,6 +5,8 @@ import type { UseBackToTopReturn } from "minimal-shared/hooks";
 
 import { useBackToTop } from "minimal-shared/hooks";
 
+import { _brands } from "src/_mock";
+
 import Fab from "@mui/material/Fab";
 import SvgIcon from "@mui/material/SvgIcon";
 
@@ -24,6 +26,8 @@ import { HomeForDesigner } from "../home-for-designer";
 import { HomeAdvertisement } from "../home-advertisement";
 import { HomeFeatureHighlights } from "../home-feature-highlights";
 import { HomeFlexibleComponents } from "../home-flexible-components";
+
+import { ElearningOurClients } from "src/sections/_elearning/elearning-our-clients";
 
 // ----------------------------------------------------------------------
 
@@ -45,6 +49,8 @@ export function HomeView() {
       <HomeHero />
 
       <HomeNewStart />
+
+      <ElearningOurClients brands={_brands} />
 
       <HomeFlexibleComponents />
 
