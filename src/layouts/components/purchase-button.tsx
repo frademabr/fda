@@ -1,20 +1,20 @@
-import type { ButtonProps } from '@mui/material/Button';
-import type { Theme, SxProps } from '@mui/material/styles';
+import type { ButtonProps } from "@mui/material/Button";
+import type { Theme, SxProps } from "@mui/material/styles";
 
-import { varAlpha } from 'minimal-shared/utils';
+import { varAlpha } from "minimal-shared/utils";
 
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 
-import { AnimateBorder } from 'src/components/animate';
+import { AnimateBorder } from "src/components/animate";
 
 // ----------------------------------------------------------------------
 
 export type PurchaseButtonProps = {
   sx?: SxProps<Theme>;
   slotProps?: {
-    button?: ButtonProps<'a'>;
+    button?: ButtonProps<"a">;
   };
 };
 
@@ -24,9 +24,9 @@ export function PurchaseButton({ slotProps, sx }: PurchaseButtonProps) {
       sx={[
         {
           borderRadius: 1,
-          position: 'relative',
-          bgcolor: 'text.primary',
-          color: 'background.paper',
+          position: "relative",
+          bgcolor: "text.primary",
+          color: "background.paper",
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
@@ -36,7 +36,7 @@ export function PurchaseButton({ slotProps, sx }: PurchaseButtonProps) {
           `linear-gradient(135deg, ${varAlpha(theme.vars.palette.primary.mainChannel, 0.04)}, ${varAlpha(theme.vars.palette.warning.mainChannel, 0.04)})`,
         primaryBorder: {
           size: 32,
-          width: '2px',
+          width: "2px",
           sx: (theme) => ({
             color: theme.vars.palette.primary.main,
           }),
@@ -55,13 +55,13 @@ export function PurchaseButton({ slotProps, sx }: PurchaseButtonProps) {
         href={paths.zoneStore}
         {...slotProps?.button}
         sx={[
-          { px: 2, borderRadius: 'inherit' },
+          { px: 2, borderRadius: "inherit" },
           ...(Array.isArray(slotProps?.button?.sx)
             ? (slotProps?.button?.sx ?? [])
             : [slotProps?.button?.sx]),
         ]}
       >
-        Purchase
+        Contato
       </Button>
     </AnimateBorder>
   );
