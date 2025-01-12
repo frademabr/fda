@@ -17,9 +17,7 @@ import {
 
 import { HomeHero } from "../home-hero";
 import { HomeFAQs } from "../home-faqs";
-import { HomePricing } from "../home-pricing";
 import { HomeNewStart } from "../home-new-start";
-import { HomeMinimalUI } from "../home-combination";
 import { HomeAdvertisement } from "../home-advertisement";
 import { HomeFeatureHighlights } from "../home-feature-highlights";
 import { HomeFlexibleComponents } from "../home-flexible-components";
@@ -48,15 +46,11 @@ export function HomeView() {
 
       <HomeFlexibleComponents />
 
-      <HomeFeatureHighlights />
-
       <EcommerceLandingHero />
 
-      <HomePricing plans={_pricingHome} />
+      <HomeFeatureHighlights />
 
       <HomeFAQs />
-
-      <HomeMinimalUI />
 
       <HomeAdvertisement />
     </>

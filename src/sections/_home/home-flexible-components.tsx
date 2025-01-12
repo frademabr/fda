@@ -1,11 +1,12 @@
 import {
   ArrowPathIcon,
-  CloudArrowUpIcon,
-  Cog6ToothIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-  ServerIcon,
   ShieldCheckIcon,
+  BanknotesIcon,
+  CurrencyDollarIcon,
+  ChartBarIcon,
+  GlobeAmericasIcon,
+  PaintBrushIcon,
+  SparklesIcon,
 } from "@heroicons/react/20/solid";
 
 const features = [
@@ -13,13 +14,13 @@ const features = [
     name: "Consultoria Tributária",
     description:
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit aute id magna.",
-    icon: CloudArrowUpIcon,
+    icon: BanknotesIcon,
   },
   {
     name: "Contabilidade",
     description:
       "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.",
-    icon: LockClosedIcon,
+    icon: CurrencyDollarIcon,
   },
   {
     name: "Auditoria Fiscal e Contábil",
@@ -31,7 +32,7 @@ const features = [
     name: "Contratos Artísticos",
     description:
       "Iure sed ab. Aperiam optio placeat dolor facere. Officiis pariatur eveniet atque et dolor.",
-    icon: FingerPrintIcon,
+    icon: PaintBrushIcon,
   },
   {
     name: "Blindagem Patrimonial",
@@ -43,19 +44,19 @@ const features = [
     name: "Recuperação de Empresas",
     description:
       "Culpa dolorem voluptatem velit autem rerum qui et corrupti. Quibusdam quo placeat.",
-    icon: ServerIcon,
+    icon: ChartBarIcon,
   },
   {
     name: "Offshore no Exterior",
     description:
       "Culpa dolorem voluptatem velit autem rerum qui et corrupti. Quibusdam quo placeat.",
-    icon: ServerIcon,
+    icon: GlobeAmericasIcon,
   },
   {
     name: "Marcas e Patentes",
     description:
       "Culpa dolorem voluptatem velit autem rerum qui et corrupti. Quibusdam quo placeat.",
-    icon: ServerIcon,
+    icon: SparklesIcon,
   },
 ];
 
@@ -79,12 +80,12 @@ export function HomeFlexibleComponents() {
           {features.map((feature) => (
             <div
               key={feature.name}
-              className="relative pl-9 border-solid border border-gray-600 border-opacity-50 py-5 rounded-lg hover:bg-gray-800 hover:bg-opacity-70"
+              className="relative pl-9 border-solid border border-gray-600 border-opacity-50 py-7 px-5 rounded-xl hover:bg-gray-800 hover:bg-opacity-70 hover:shadow-white hover:shadow-md"
             >
               <dt className="inline font-semibold text-white">
                 <feature.icon
                   aria-hidden="true"
-                  className="absolute left-1 top-1 size-6 text-blue-700 mt-5"
+                  className="absolute left-1 top-1 size-6 text-blue-700 mt-7"
                 />
                 {feature.name}
               </dt>{" "}
