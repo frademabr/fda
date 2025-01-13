@@ -24,6 +24,7 @@ import { HomeFlexibleComponents } from "../home-flexible-components";
 import { ElearningOurClients } from "src/sections/_elearning/elearning-our-clients";
 import { EcommerceLandingHero } from "@/sections/_ecommerce/landing/ecommerce-landing-hero";
 import { MarketingServicesHowItWork } from "@/sections/_marketing/services/marketing-services-how-it-work";
+import { MarketingContact } from "@/sections/_marketing/contact/marketing-contact";
 
 // ----------------------------------------------------------------------
 
@@ -42,11 +43,11 @@ export function HomeView() {
 
       <ElearningOurClients brands={_brands} />
 
-      <HomeNewStart />
-
       <HomeFlexibleComponents />
 
       <EcommerceLandingHero />
+
+      <MarketingContact />
 
       <HomeFeatureHighlights />
 

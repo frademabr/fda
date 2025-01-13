@@ -38,45 +38,47 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
   ]);
 
   return (
-    <div className="">
-      <Box
-        className=""
-        component="section"
-        sx={[
-          (theme) => ({
-            ...theme.mixins.bgGradient({
-              images: [
-                // `radial-gradient(100% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${theme.vars.palette.common.black})`,
-                // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
-              ],
-            }),
-            overflow: "hidden",
-            position: "relative",
-          }),
-          ...(Array.isArray(sx) ? sx : [sx]),
-        ]}
-        {...other}
-      >
-        {/* <Divider component="section" className="h-2 border-r-8 w-120" /> */}
+    <>
+      <Divider className="" />
+      <div className="mb-5">
         <Box
-          component="img"
-          alt="Texture"
-          src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
-          sx={{ top: 0, right: 0, height: 4, width: "auto", position: "absolute" }}
-        />
-
-        <Container sx={{ position: "relative", marginTop: "-80px" }}>
+          className=""
+          component="section"
+          sx={[
+            (theme) => ({
+              ...theme.mixins.bgGradient({
+                images: [
+                  // `radial-gradient(100% 160% at 50% 50%, ${varAlpha(theme.vars.palette.common.blackChannel, 0)}, ${theme.vars.palette.common.black})`,
+                  // `url(${CONFIG.assetsDir}/assets/background/derek.jpg)`,
+                ],
+              }),
+              overflow: "hidden",
+              position: "relative",
+            }),
+            ...(Array.isArray(sx) ? sx : [sx]),
+          ]}
+          {...other}
+        >
+          {/* <Divider component="section" className="h-2 border-r-8 w-120" /> */}
           <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              transform: "translateY(-64px)",
-            }}
-          >
-            {/* <Image src={`...${CONFIG.assetsDir}/assets/images/home/headertop.jpeg`} /> */}
-            <GlareCard className="flex flex-col items-start justify-center pb-6 py-8 px-16 overflow-hidden">
-              {/* <CarouselDotButtons
+            component="img"
+            alt="Texture"
+            src={`${CONFIG.assetsDir}/assets/background/texture-2.webp`}
+            sx={{ top: 0, right: 0, height: 4, width: "auto", position: "absolute" }}
+          />
+
+          <Container sx={{ position: "relative", marginTop: "-80px" }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                transform: "translateY(-64px)",
+              }}
+            >
+              {/* <Image src={`...${CONFIG.assetsDir}/assets/images/home/headertop.jpeg`} /> */}
+              <GlareCard className="flex flex-col items-start justify-center pb-6 py-8 px-16 overflow-hidden">
+                {/* <CarouselDotButtons
                 variant="rounded"
                 scrollSnaps={carousel.dots.scrollSnaps}
                 selectedIndex={carousel.dots.selectedIndex}
@@ -84,20 +86,20 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
                 sx={{ color: 'info.main' }}
               /> */}
 
-              <Carousel
-                className="h-full w-full absolute inset-0  mb-10"
-                carousel={carousel}
-              >
-                {_productsCarousel.map((product, index) => (
-                  <CarouselItem
-                    key={product.id}
-                    product={product}
-                    selected={carousel.dots.selectedIndex === index}
-                  />
-                ))}
-              </Carousel>
-            </GlareCard>
-            {/*
+                <Carousel
+                  className="h-full w-full absolute inset-0  mb-10"
+                  carousel={carousel}
+                >
+                  {_productsCarousel.map((product, index) => (
+                    <CarouselItem
+                      key={product.id}
+                      product={product}
+                      selected={carousel.dots.selectedIndex === index}
+                    />
+                  ))}
+                </Carousel>
+              </GlareCard>
+              {/*
         <CarouselArrowBasicButtons
           {...carousel.arrows}
           options={carousel.options}
@@ -129,10 +131,11 @@ export function EcommerceLandingHero({ sx, ...other }: BoxProps) {
           }}
           sx={{ gap: 1, color: 'info.main' }}
         /> */}
-          </Box>
-        </Container>
-      </Box>
-    </div>
+            </Box>
+          </Container>
+        </Box>
+      </div>
+    </>
   );
 }
 

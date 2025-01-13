@@ -31,7 +31,7 @@ export function ElearningOurClients({ brands, sx, ...other }: Props) {
       sx={[{ pt: 10, pb: { xs: 5, md: 10 } }, ...(Array.isArray(sx) ? sx : [sx])]}
       {...other}
     >
-      <Container>
+      <Container className="mt-20">
         <Box sx={{ textAlign: "center", mb: { xs: 5, md: 10 } }}>
           <Typography variant="h2" sx={{ mb: 3 }}>
             Sobre a Empresa

@@ -8,6 +8,7 @@ import {
   PaintBrushIcon,
   SparklesIcon,
 } from "@heroicons/react/20/solid";
+import { Divider } from "@mui/material";
 
 const features = [
   {
@@ -62,38 +63,40 @@ const features = [
 
 export function HomeFlexibleComponents() {
   return (
-    <div className="bg-inherit py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-base/7 font-semibold text-blue-700">
-            As melhores estratégias
-          </h2>
-          <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-            Nossos serviços você encontra aqui
-          </p>
-          <p className="mt-6 text-lg/8 text-gray-300">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
-            perferendis suscipit eaque, iste dolor cupiditate blanditiis.
-          </p>
+    <>
+      <div className="bg-inherit mb-10 py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto mb-10 max-w-2xl lg:mx-0">
+            <h2 className="text-base/7 font-semibold text-blue-700">
+              As melhores estratégias
+            </h2>
+            <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Nossos serviços você encontra aqui
+            </p>
+            <p className="mt-6 text-lg/8 text-gray-300">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit
+              perferendis suscipit eaque, iste dolor cupiditate blanditiis.
+            </p>
+          </div>
+          <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-gray-300  sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16">
+            {features.map((feature) => (
+              <div
+                key={feature.name}
+                className="relative pl-9 border-solid border border-gray-600 border-opacity-50 py-7 px-5 rounded-xl hover:bg-gray-800 hover:bg-opacity-70 hover:shadow-white hover:shadow-md"
+              >
+                <dt className="inline font-semibold text-white">
+                  <feature.icon
+                    aria-hidden="true"
+                    className="absolute left-1 top-1 size-6 text-blue-700 mt-7"
+                  />
+                  {feature.name}
+                </dt>{" "}
+                <dd className="inline opacity-70">{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
-        <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base/7 text-gray-300  sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-16">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="relative pl-9 border-solid border border-gray-600 border-opacity-50 py-7 px-5 rounded-xl hover:bg-gray-800 hover:bg-opacity-70 hover:shadow-white hover:shadow-md"
-            >
-              <dt className="inline font-semibold text-white">
-                <feature.icon
-                  aria-hidden="true"
-                  className="absolute left-1 top-1 size-6 text-blue-700 mt-7"
-                />
-                {feature.name}
-              </dt>{" "}
-              <dd className="inline opacity-70">{feature.description}</dd>
-            </div>
-          ))}
-        </dl>
       </div>
-    </div>
+    </>
   );
 }
