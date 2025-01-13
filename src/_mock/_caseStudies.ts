@@ -1,19 +1,19 @@
-import { CONFIG } from 'src/global-config';
+import { CONFIG } from "src/global-config";
 
-import { _mock } from './_mock';
-import { _tags } from './assets';
+import { _mock } from "./_mock";
+import { _tags } from "./assets";
 
 // ----------------------------------------------------------------------
 
 const TITLES = [
-  'Bank of America',
-  'Technology Nixon',
-  'Turn Key Smart',
-  'Digital Shose',
-  'Action Car',
-  'The Zone UI',
-  'Minimal UI',
-  'Network Firefox',
+  "Bank of America",
+  "Technology Nixon",
+  "Turn Key Smart",
+  "Digital Shose",
+  "Action Car",
+  "The Zone UI",
+  "Minimal UI",
+  "Network Firefox",
 ];
 
 const CONTENT = `
@@ -50,21 +50,22 @@ const getCategory = (index: number) => {
   return _tags[0];
 };
 
-const getGalleryImgs = () => Array.from({ length: 6 }, (_, index) => _mock.image.marketing(index));
+const getGalleryImgs = () =>
+  Array.from({ length: 6 }, (_, index) => _mock.image.Filiais(index));
 
 export const _caseStudies = TITLES.map((_, index) => ({
   id: _mock.id(index),
   content: CONTENT,
   title: TITLES[index],
   createdAt: _mock.time(index),
-  website: 'https://example.com/',
+  website: "https://example.com/",
   description: _mock.description(index),
-  coverUrl: _mock.image.marketing(index + 1),
-  heroUrl: `${CONFIG.assetsDir}/assets/images/marketing/marketing-large-1.webp`,
+  coverUrl: _mock.image.Filiais(index + 1),
+  heroUrl: `${CONFIG.assetsDir}/assets/images/Filiais/Filiais-large-1.webp`,
   how_we_work:
-    'Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringi',
+    "Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringi",
   results:
-    'Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringi',
+    "Nullam tincidunt adipiscing enim. Mauris sollicitudin fermentum libero. Pellentesque auctor neque nec urna. Sed fringi",
   category: getCategory(index),
   galleryImgs: getGalleryImgs(),
 }));

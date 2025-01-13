@@ -23,8 +23,9 @@ import { HomeFlexibleComponents } from "../home-flexible-components";
 
 import { ElearningOurClients } from "src/sections/_elearning/elearning-our-clients";
 import { EcommerceLandingHero } from "@/sections/_ecommerce/landing/ecommerce-landing-hero";
-import { MarketingServicesHowItWork } from "@/sections/_marketing/services/marketing-services-how-it-work";
-import { MarketingContact } from "@/sections/_marketing/contact/marketing-contact";
+import { FiliaisServicesHowItWork } from "@/sections/_filiais/services/marketing-services-how-it-work";
+import { FiliaisContact } from "@/sections/_filiais/contact/marketing-contact";
+import { MarketingContactInfo } from "@/sections/_filiais/contact/marketing-contact-info";
 
 // ----------------------------------------------------------------------
 
@@ -39,7 +40,7 @@ export function HomeView() {
         sx={{ position: "fixed" }}
       />
 
-      <MarketingServicesHowItWork />
+      <FiliaisServicesHowItWork />
 
       <ElearningOurClients brands={_brands} />
 
@@ -47,11 +48,15 @@ export function HomeView() {
 
       <EcommerceLandingHero />
 
-      <MarketingContact />
+      <FiliaisContact />
 
       <HomeFeatureHighlights />
 
+      {/* Rever caminho filiais para o Faq */}
+
       <HomeFAQs />
+
+      {/* <MarketingContactInfo className="justify-start align-middle ml-10" /> */}
 
       <HomeAdvertisement />
     </>

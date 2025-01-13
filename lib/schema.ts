@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const MarketingContactSchema = z.object({
+export const FiliaisContactSchema = z.object({
   id: z.string().cuid(),
   filiais: z.string({ message: "Escolha uma filial Fradema!" }),
 
@@ -17,7 +17,7 @@ export const MarketingContactSchema = z.object({
     .min(11, { message: "Celular deve ser no formato com DDD (xx)" }),
 });
 
-// const marketingContact = MarketingContactSchema.parse({
+// const FiliaisContact = FiliaisContactSchema.parse({
 //   id: 1,
 //   filiais: ["Fradema - RJ"],
 //   outros: ["Web"],

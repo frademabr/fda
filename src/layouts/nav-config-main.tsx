@@ -9,17 +9,17 @@ const imagePath = (name: string) => `${CONFIG.assetsDir}/assets/images/menu/${na
 
 export const pageLinks = [
   {
-    subheader: "Marketing",
-    coverUrl: imagePath("marketing.webp"),
+    subheader: "Filiais",
+    coverUrl: imagePath("filiais.webp"),
     items: [
-      { title: "Landing", path: paths.marketing.root },
-      { title: "Services", path: paths.marketing.services },
-      { title: "Case studies", path: paths.marketing.caseStudies },
-      { title: "Case study", path: paths.marketing.caseStudy(_caseStudies[0].id) },
-      { title: "Posts", path: paths.marketing.posts },
-      { title: "Post", path: paths.marketing.post },
-      { title: "About", path: paths.marketing.about },
-      { title: "Contact", path: paths.marketing.contact },
+      { title: "Landing", path: paths.Filiais.root },
+      { title: "Services", path: paths.Filiais.services },
+      { title: "Case studies", path: paths.Filiais.caseStudies },
+      { title: "Case study", path: paths.Filiais.caseStudy(_caseStudies[0].id) },
+      { title: "Posts", path: paths.Filiais.posts },
+      { title: "Post", path: paths.Filiais.post },
+      { title: "About", path: paths.Filiais.about },
+      { title: "Contact", path: paths.Filiais.contact },
     ],
   },
   {
@@ -108,7 +108,7 @@ export const pageLinks = [
 
 export const navData = [
   { title: "Home", path: "/" },
-  { title: "Filiais", path: "#" },
+  { title: "Filiais", path: paths.Filiais.caseStudies },
   { title: "Serviços", path: "#" },
   { title: "Blog", path: "#" }, // paths.pages, children: pageLinks
   { title: "Sobre Nós", path: "#" },

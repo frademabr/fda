@@ -1,12 +1,12 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
-import { fAdd } from 'src/utils/format-time';
+import { fAdd } from "src/utils/format-time";
 
-import { CONFIG } from 'src/global-config';
-import { countries } from 'src/assets/data';
+import { CONFIG } from "src/global-config";
+import { countries } from "src/assets/data";
 
-import { _mock } from './_mock';
-import { _tags } from './assets';
+import { _mock } from "./_mock";
+import { _tags } from "./assets";
 
 // ----------------------------------------------------------------------
 
@@ -38,14 +38,14 @@ const CONTENT = `
 `;
 
 export const JOB_BENEFIT_OPTIONS = [
-  'Free parking',
-  'Bonus commission',
-  'Travel',
-  'Device support',
-  'Health care',
-  'Training',
-  'Retirement plans',
-  'Flexible work schedule',
+  "Free parking",
+  "Bonus commission",
+  "Travel",
+  "Device support",
+  "Health care",
+  "Training",
+  "Retirement plans",
+  "Flexible work schedule",
 ];
 
 // ----------------------------------------------------------------------
@@ -61,18 +61,18 @@ const getLocationMap = (index: number) => [
 ];
 
 const getJobType = (index: number) => {
-  if (index % 2) return 'Part time';
-  if (index % 4) return 'Freelance';
-  return 'Full time';
+  if (index % 2) return "Part time";
+  if (index % 4) return "Freelance";
+  return "Full time";
 };
 
 const getJobLevel = (index: number) => {
-  if (index % 2) return 'Manager';
-  if (index % 4) return 'Intern/student';
-  return 'No experience';
+  if (index % 2) return "Manager";
+  if (index % 4) return "Intern/student";
+  return "No experience";
 };
 
-const getSalary = (index: number) => (index % 3 ? 12000 : 'Competitive');
+const getSalary = (index: number) => (index % 3 ? 12000 : "Competitive");
 
 const getLocation = (index: number) => countries.map((option) => option.label)[index + 1];
 
@@ -94,16 +94,16 @@ export const _jobs = Array.from({ length: 12 }, (_, index) => ({
   locationMap: getLocationMap(index),
   createdAt: dayjs(new Date()).format(),
   totalViews: _mock.number.nativeL(index),
-  languages: ['Russian', 'Spanish', 'English'],
+  languages: ["Russian", "Spanish", "English"],
   company: {
     name: _mock.companyName(index),
     logo: _mock.image.company(index),
   },
   shareLinks: {
-    facebook: 'https://facebook.example.com',
-    instagram: 'https://instagram.example.com',
-    linkedin: 'https://linkedin.example.com',
-    twitter: 'https://twitter.example.com',
+    facebook: "https://facebook.example.com",
+    instagram: "https://instagram.example.com",
+    linkedin: "https://linkedin.example.com",
+    twitter: "https://twitter.example.com",
   },
 }));
 
@@ -116,7 +116,7 @@ export const _jobsByCompanies = Array.from({ length: 12 }, (_, index) => ({
 
 const ICONS = [
   `${CONFIG.assetsDir}/assets/icons/solid-64/ic-finance.svg`,
-  `${CONFIG.assetsDir}/assets/icons/solid-64/ic-marketing-bullhorn.svg`,
+  `${CONFIG.assetsDir}/assets/icons/solid-64/ic-Filiais-bullhorn.svg`,
   `${CONFIG.assetsDir}/assets/icons/solid-64/ic-creativity.svg`,
   `${CONFIG.assetsDir}/assets/icons/solid-64/ic-web-programming.svg`,
   `${CONFIG.assetsDir}/assets/icons/solid-64/ic-chip.svg`,
@@ -129,14 +129,14 @@ export const _jobsByCategories = Array.from({ length: 8 }, (_, index) => ({
   id: _mock.id(index),
   icon: ICONS[index],
   name: [
-    'Accounting / Finance',
-    'Marketing',
-    'Design',
-    'Development',
-    'IT - Hardware',
-    'Customer Service',
-    'Health and Care',
-    'Banking',
+    "Accounting / Finance",
+    "Filiais",
+    "Design",
+    "Development",
+    "IT - Hardware",
+    "Customer Service",
+    "Health and Care",
+    "Banking",
   ][index],
   totalJobs: _mock.number.nativeM(index),
 }));

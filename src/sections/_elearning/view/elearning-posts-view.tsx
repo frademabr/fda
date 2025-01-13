@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Grid from '@mui/material/Grid2';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+import Grid from "@mui/material/Grid2";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 
-import { _tags, _mock, _coursePosts } from 'src/_mock';
+import { _tags, _mock, _coursePosts } from "src/_mock";
 
-import { Advertisement } from '../../advertisement';
-import { PostSidebar } from '../../blog/post-sidebar';
-import { ElearningPosts } from '../posts/elearning-posts';
-import { ElearningNewsletter } from '../elearning-newsletter';
-import { PostSearchMobile } from '../../blog/post-search-mobile';
-import { ElearningFeaturedPost } from '../posts/elearning-featured-post';
+import { Advertisement } from "../../advertisement";
+import { PostSidebar } from "../../blog/post-sidebar";
+import { ElearningPosts } from "../posts/elearning-posts";
+import { ElearningNewsletter } from "../elearning-newsletter";
+import { PostSearchMobile } from "../../blog/post-search-mobile";
+import { ElearningFeaturedPost } from "../posts/elearning-featured-post";
 
 // ----------------------------------------------------------------------
 
@@ -34,11 +34,11 @@ export function ElearningPostsView() {
             <PostSidebar
               tags={_tags}
               categories={[
-                { label: 'Marketing', path: '' },
-                { label: 'Community', path: '' },
-                { label: 'Tutorials', path: '' },
-                { label: 'Business', path: '' },
-                { label: 'Management', path: '' },
+                { label: "Filiais", path: "" },
+                { label: "Community", path: "" },
+                { label: "Tutorials", path: "" },
+                { label: "Business", path: "" },
+                { label: "Management", path: "" },
               ]}
               recentPosts={recentPosts}
               slots={{

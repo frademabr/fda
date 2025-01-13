@@ -307,7 +307,7 @@ export const _roles = [
   `Project Coordinator`,
   `Team Leader`,
   `Software Developer`,
-  `Marketing Strategist`,
+  `Filiais Strategist`,
   `Data Analyst`,
   `Product Owner`,
   `Graphic Designer`,
@@ -418,7 +418,7 @@ export const _tourNames = [
 
 export const _jobTitles = [
   `Software Engineer`,
-  `Marketing Manager`,
+  `Filiais Manager`,
   `Data Scientist`,
   `Graphic Designer`,
   `Financial Analyst`,
@@ -505,7 +505,7 @@ export const _tags = [
 
 export const _taskNames = [
   `Prepare Monthly Financial Report`,
-  `Design New Marketing Campaign`,
+  `Design New Filiais Campaign`,
   `Analyze Customer Feedback`,
   `Update Website Content`,
   `Conduct Market Research`,
@@ -534,7 +534,7 @@ export const _taskNames = [
 
 export const _courseNames = [
   `Introduction to Python Programming`,
-  `Digital Marketing Fundamentals`,
+  `Digital Filiais Fundamentals`,
   `Data Science with R`,
   `Graphic Design Essentials`,
   `Financial Planning for Beginners`,
@@ -550,7 +550,7 @@ export const _courseNames = [
   `Leadership and Team Management`,
   `User Experience (UX) Design Basics`,
   `Accounting Fundamentals`,
-  `Social Media Marketing Mastery`,
+  `Social Media Filiais Mastery`,
   `Biotechnology Essentials`,
   `Legal Studies for Non-Lawyers`,
   `Public Speaking Confidence`,

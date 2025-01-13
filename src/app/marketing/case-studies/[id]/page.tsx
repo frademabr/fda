@@ -1,16 +1,21 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import { _caseStudies } from 'src/_mock';
-import { CONFIG } from 'src/global-config';
+import { _caseStudies } from "src/_mock";
+import { CONFIG } from "src/global-config";
 
-import { MarketingCaseStudyView } from 'src/sections/_marketing/view/marketing-case-study-view';
+import { FiliaisCaseStudyView } from "@/sections/_filiais/view/Filiais-case-study-view";
 
 // ----------------------------------------------------------------------
 
 export default async function Page({ params }: Params) {
   const data = await fetchCaseStudy(params.id);
 
-  return <MarketingCaseStudyView caseStudy={data} relatedCaseStudies={_caseStudies.slice(0, 3)} />;
+  return (
+    <FiliaisCaseStudyView
+      caseStudy={data}
+      relatedCaseStudies={_caseStudies.slice(0, 3)}
+    />
+  );
 }
 
 // ----------------------------------------------------------------------
@@ -48,6 +53,6 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const data = await fetchCaseStudy(params?.id);
 
   return {
-    title: `${data?.title} | Marketing - ${CONFIG.appName}`,
+    title: `${data?.title} | Filiais - ${CONFIG.appName}`,
   };
 }

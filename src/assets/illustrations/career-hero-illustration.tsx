@@ -1,21 +1,21 @@
-import type { MotionValue } from 'framer-motion';
-import type { BoxProps } from '@mui/material/Box';
-import type { Theme, SxProps } from '@mui/material/styles';
+import type { MotionValue } from "framer-motion";
+import type { BoxProps } from "@mui/material/Box";
+import type { Theme, SxProps } from "@mui/material/styles";
 
-import { memo } from 'react';
-import { useSpring, useTransform } from 'framer-motion';
+import { memo } from "react";
+import { useSpring, useTransform } from "framer-motion";
 
-import Box from '@mui/material/Box';
-import { useTheme } from '@mui/material/styles';
+import Box from "@mui/material/Box";
+import { useTheme } from "@mui/material/styles";
 
-import { CONFIG } from 'src/global-config';
+import { CONFIG } from "src/global-config";
 
-import { SvgColor } from 'src/components/svg-color';
+import { SvgColor } from "src/components/svg-color";
 
-import { Character } from './components/character';
-import { CirclePattern } from './components/circle-pattern';
-import { TrianglePattern } from './components/shape-pattern';
-import { FloatIcon, FloatLabel } from './components/float-elements';
+import { Character } from "./components/character";
+import { CirclePattern } from "./components/circle-pattern";
+import { TrianglePattern } from "./components/shape-pattern";
+import { FloatIcon, FloatLabel } from "./components/float-elements";
 
 // ----------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ function CareerHeroIllustration({ sx, ...other }: BoxProps) {
   const characterStyles: SxProps<Theme> = {
     bottom: 16,
     width: 300,
-    position: 'absolute',
+    position: "absolute",
   };
 
   const renderShapes = () => (
@@ -79,32 +79,32 @@ function CareerHeroIllustration({ sx, ...other }: BoxProps) {
     <>
       <IconLabel
         label="Accounting"
-        icon={iconPath('banner/ic-accounting.svg')}
+        icon={iconPath("banner/ic-accounting.svg")}
         offsetX={offsetX(-DISTANCE)}
         offsetY={offsetY(-DISTANCE)}
-        sx={{ top: 170, transform: 'translateX(-125px) rotate(-15deg)' }}
+        sx={{ top: 170, transform: "translateX(-125px) rotate(-15deg)" }}
       />
       <Character sx={{ ...characterStyles }} />
       <IconLabel
         label="Banking"
-        icon={iconPath('banner/ic-banking.svg')}
+        icon={iconPath("banner/ic-banking.svg")}
         offsetX={offsetX(DISTANCE * 2)}
         offsetY={offsetY(DISTANCE * 2)}
-        sx={{ transform: 'translate(175px, 90px) rotate(15deg)' }}
+        sx={{ transform: "translate(175px, 90px) rotate(15deg)" }}
       />
       <IconLabel
         label="Health care"
-        icon={iconPath('banner/ic-health-care.svg')}
+        icon={iconPath("banner/ic-health-care.svg")}
         offsetX={offsetX(DISTANCE * 3)}
         offsetY={offsetY(DISTANCE * 3)}
-        sx={{ transform: 'translate(170px, -110px) rotate(15deg)' }}
+        sx={{ transform: "translate(170px, -110px) rotate(15deg)" }}
       />
       <IconLabel
         label="Software"
-        icon={iconPath('banner/ic-software-development.svg')}
+        icon={iconPath("banner/ic-software-development.svg")}
         offsetX={offsetX(DISTANCE * -4)}
         offsetY={offsetY(DISTANCE * -4)}
-        sx={{ zIndex: 11, bottom: 160, transform: 'translateX(-110px)' }}
+        sx={{ zIndex: 11, bottom: 160, transform: "translateX(-110px)" }}
       />
     </>
   );
@@ -113,24 +113,24 @@ function CareerHeroIllustration({ sx, ...other }: BoxProps) {
     <>
       <IconBox
         color={theme.vars.palette.warning.mainChannel}
-        icon={iconPath('solid-64/ic-creativity.svg')}
+        icon={iconPath("solid-64/ic-creativity.svg")}
         offsetX={offsetX(DISTANCE)}
         offsetY={offsetY(DISTANCE)}
-        sx={{ top: 16, transform: 'translateX(20px)' }}
+        sx={{ top: 16, transform: "translateX(20px)" }}
       />
       <IconBox
         color={theme.vars.palette.success.mainChannel}
-        icon={iconPath('solid-64/ic-marketing-bullhorn.svg')}
+        icon={iconPath("solid-64/ic-Filiais-bullhorn.svg")}
         offsetX={offsetX(-DISTANCE * 2)}
         offsetY={offsetY(DISTANCE * 2)}
-        sx={{ bottom: 16, transform: 'translateX(40px)' }}
+        sx={{ bottom: 16, transform: "translateX(40px)" }}
       />
       <IconBox
         color={theme.vars.palette.info.mainChannel}
-        icon={iconPath('solid-64/ic-customer-service.svg')}
+        icon={iconPath("solid-64/ic-customer-service.svg")}
         offsetX={offsetX(DISTANCE * 3)}
         offsetY={offsetY(DISTANCE * 3)}
-        sx={{ bottom: 220, transform: 'translateX(-220px)' }}
+        sx={{ bottom: 220, transform: "translateX(-220px)" }}
       />
     </>
   );
@@ -143,10 +143,10 @@ function CareerHeroIllustration({ sx, ...other }: BoxProps) {
         {
           width: 560,
           height: 560,
-          display: 'flex',
-          position: 'relative',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          position: "relative",
+          alignItems: "center",
+          justifyContent: "center",
         },
         ...(Array.isArray(sx) ? sx : [sx]),
       ]}
@@ -172,10 +172,17 @@ type IconProps = BoxProps & {
   offsetY: MotionValue<number>;
 };
 
-const IconLabel = ({ label, icon, offsetX, offsetY, sx, ...other }: Omit<IconProps, 'color'>) => (
+const IconLabel = ({
+  label,
+  icon,
+  offsetX,
+  offsetY,
+  sx,
+  ...other
+}: Omit<IconProps, "color">) => (
   <Box
     component="span"
-    sx={[{ zIndex: 9, position: 'absolute' }, ...(Array.isArray(sx) ? sx : [sx])]}
+    sx={[{ zIndex: 9, position: "absolute" }, ...(Array.isArray(sx) ? sx : [sx])]}
     {...other}
   >
     <FloatLabel
@@ -186,16 +193,23 @@ const IconLabel = ({ label, icon, offsetX, offsetY, sx, ...other }: Omit<IconPro
   </Box>
 );
 
-const IconBox = ({ color, icon, offsetX, offsetY, sx, ...other }: Omit<IconProps, 'label'>) => (
+const IconBox = ({
+  color,
+  icon,
+  offsetX,
+  offsetY,
+  sx,
+  ...other
+}: Omit<IconProps, "label">) => (
   <Box
     component="span"
-    sx={[{ zIndex: 9, position: 'absolute' }, ...(Array.isArray(sx) ? sx : [sx])]}
+    sx={[{ zIndex: 9, position: "absolute" }, ...(Array.isArray(sx) ? sx : [sx])]}
     {...other}
   >
     <FloatIcon
       color={color}
       style={{ x: offsetX, y: offsetY }}
-      icon={<SvgColor src={icon} sx={{ width: 40, height: 40, color: 'common.black' }} />}
+      icon={<SvgColor src={icon} sx={{ width: 40, height: 40, color: "common.black" }} />}
     />
   </Box>
 );

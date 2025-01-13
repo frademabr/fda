@@ -1,11 +1,11 @@
-import { CONFIG } from 'src/global-config';
+import { CONFIG } from "src/global-config";
 
-import { MarketingServicesView } from 'src/sections/_marketing/view/marketing-services-view';
+import { FiliaisServicesView } from "@/sections/_filiais/view/Filiais-services-view";
 
 // ----------------------------------------------------------------------
 
-export const metadata = { title: `Services | Marketing - ${CONFIG.appName}` };
+export const metadata = { title: `Services | Filiais - ${CONFIG.appName}` };
 
 export default function Page() {
-  return <MarketingServicesView />;
+  return <FiliaisServicesView />;
 }

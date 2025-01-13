@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid2';
-import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid2";
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-import { paths } from 'src/routes/paths';
+import { paths } from "src/routes/paths";
 
-import { _mock, _tags, _socials, _travelPosts } from 'src/_mock';
-import { TwitterIcon, FacebookIcon, LinkedinIcon, InstagramIcon } from 'src/assets/icons';
+import { _mock, _tags, _socials, _travelPosts } from "src/_mock";
+import { TwitterIcon, FacebookIcon, LinkedinIcon, InstagramIcon } from "src/assets/icons";
 
-import { Markdown } from 'src/components/markdown';
-import { CustomBreadcrumbs } from 'src/components/custom-breadcrumbs';
+import { Markdown } from "src/components/markdown";
+import { CustomBreadcrumbs } from "src/components/custom-breadcrumbs";
 
-import { PostTags } from '../../blog/post-tags';
-import { Advertisement } from '../../advertisement';
-import { PostAuthor } from '../../blog/post-author';
-import { PostSidebar } from '../../blog/post-sidebar';
-import { TravelNewsletter } from '../travel-newsletter';
-import { TravelPostHero } from '../posts/travel-post-hero';
-import { TravelLatestPosts } from '../posts/travel-latest-posts';
+import { PostTags } from "../../blog/post-tags";
+import { Advertisement } from "../../advertisement";
+import { PostAuthor } from "../../blog/post-author";
+import { PostSidebar } from "../../blog/post-sidebar";
+import { TravelNewsletter } from "../travel-newsletter";
+import { TravelPostHero } from "../posts/travel-post-hero";
+import { TravelLatestPosts } from "../posts/travel-latest-posts";
 
 // ----------------------------------------------------------------------
 
@@ -31,12 +31,12 @@ const latestPosts = _travelPosts.slice(0, 4);
 
 export function TravelPostView() {
   const renderSocials = () => (
-    <Box sx={{ gap: 1.5, display: 'flex', mt: 5 }}>
-      <Box component="span" sx={{ lineHeight: '30px', typography: 'subtitle2' }}>
+    <Box sx={{ gap: 1.5, display: "flex", mt: 5 }}>
+      <Box component="span" sx={{ lineHeight: "30px", typography: "subtitle2" }}>
         Share:
       </Box>
 
-      <Box sx={{ gap: 1, display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+      <Box sx={{ gap: 1, display: "flex", alignItems: "center", flexWrap: "wrap" }}>
         {_socials.map((social) => (
           <Button
             key={social.value}
@@ -44,10 +44,10 @@ export function TravelPostView() {
             variant="outlined"
             startIcon={
               <>
-                {social.value === 'twitter' && <TwitterIcon />}
-                {social.value === 'facebook' && <FacebookIcon />}
-                {social.value === 'instagram' && <InstagramIcon />}
-                {social.value === 'linkedin' && <LinkedinIcon />}
+                {social.value === "twitter" && <TwitterIcon />}
+                {social.value === "facebook" && <FacebookIcon />}
+                {social.value === "instagram" && <InstagramIcon />}
+                {social.value === "linkedin" && <LinkedinIcon />}
               </>
             }
           >
@@ -61,18 +61,18 @@ export function TravelPostView() {
   return (
     <>
       <TravelPostHero
-        title={post?.title || ''}
-        heroUrl={post?.heroUrl || ''}
-        duration={post?.duration || ''}
-        createdAt={post?.createdAt || ''}
+        title={post?.title || ""}
+        heroUrl={post?.heroUrl || ""}
+        duration={post?.duration || ""}
+        createdAt={post?.createdAt || ""}
       />
 
       <Container>
         <CustomBreadcrumbs
           sx={{ my: 3 }}
           links={[
-            { name: 'Home', href: '/' },
-            { name: 'Blog', href: paths.travel.posts },
+            { name: "Home", href: "/" },
+            { name: "Blog", href: paths.travel.posts },
             { name: post?.title },
           ]}
         />
@@ -87,7 +87,7 @@ export function TravelPostView() {
               {post?.description}
             </Typography>
 
-            <Markdown content={post?.content || ''} firstLetter />
+            <Markdown content={post?.content || ""} firstLetter />
 
             {!!post?.tags?.length && <PostTags tags={post.tags} />}
 
@@ -103,11 +103,11 @@ export function TravelPostView() {
               tags={_tags}
               author={post?.author}
               categories={[
-                { label: 'Marketing', path: '' },
-                { label: 'Community', path: '' },
-                { label: 'Tutorials', path: '' },
-                { label: 'Business', path: '' },
-                { label: 'Management', path: '' },
+                { label: "Filiais", path: "" },
+                { label: "Community", path: "" },
+                { label: "Tutorials", path: "" },
+                { label: "Business", path: "" },
+                { label: "Management", path: "" },
               ]}
               recentPosts={recentPosts}
               slots={{

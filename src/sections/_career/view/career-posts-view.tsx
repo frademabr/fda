@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import Grid from '@mui/material/Grid2';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
+import Grid from "@mui/material/Grid2";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 
-import { _tags, _mock, _careerPosts } from 'src/_mock';
+import { _tags, _mock, _careerPosts } from "src/_mock";
 
-import { CareerPosts } from '../posts/career-posts';
-import { Advertisement } from '../../advertisement';
-import { PostSidebar } from '../../blog/post-sidebar';
-import { CareerNewsletter } from '../career-newsletter';
-import { PostSearchMobile } from '../../blog/post-search-mobile';
+import { CareerPosts } from "../posts/career-posts";
+import { Advertisement } from "../../advertisement";
+import { PostSidebar } from "../../blog/post-sidebar";
+import { CareerNewsletter } from "../career-newsletter";
+import { PostSearchMobile } from "../../blog/post-search-mobile";
 
 // ----------------------------------------------------------------------
 
@@ -31,11 +31,11 @@ export function CareerPostsView() {
             <PostSidebar
               tags={_tags}
               categories={[
-                { label: 'Marketing', path: '' },
-                { label: 'Community', path: '' },
-                { label: 'Tutorials', path: '' },
-                { label: 'Business', path: '' },
-                { label: 'Management', path: '' },
+                { label: "Filiais", path: "" },
+                { label: "Community", path: "" },
+                { label: "Tutorials", path: "" },
+                { label: "Business", path: "" },
+                { label: "Management", path: "" },
               ]}
               recentPosts={recentPosts}
               slots={{
